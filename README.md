@@ -4,7 +4,7 @@ The repository for team OWS at [LongEval 2024](https://clef-longeval.github.io/)
 
 ## Idea 1: Features from WOWS
 
-- Feature-based Learning to Rank
+- Feature-based Learning to Rank (Gijs)
   - Use the WOWS submissions to create around 50 features
     - Query Features: Query Intent + Query Performance Prediction
     - Document Features: Web Page Genre + Corpus Grap + Readibility 
@@ -19,7 +19,7 @@ I already know which topics will be submitted. I already know "similar" document
 
 Archive lookup: I look up what was good a few months ago, now we try to transfer this via two strategies and combinations thereof: (1) query reformulation, (2) document reformulation.
 
-- Query Reformulation:
+- Query Reformulation (Daria):
   - Idea:
     - Queries overlap over the different time slots
     - I.e. for some query, we know which documents were clicked a few months ago
@@ -29,7 +29,7 @@ Archive lookup: I look up what was good a few months ago, now we try to transfer
     - Combine it with the Corpus Graph idea
       - What to do if a query is new
 
-- Document Reformulation/Oracle Indexing:
+- Document Reformulation/Oracle Indexing/Index Partitioning (Maik):
   - Idea:
     - Reformulate all documents so that they are only retrieved for the queries for which they are relevant and not be retrieved for queries for which they are not relevant
     - Because queries are overlapping
@@ -43,7 +43,7 @@ Archive lookup: I look up what was good a few months ago, now we try to transfer
       - Include corpus graph idea?
       - Goal: ndcg above 0.8
   - Technnologies to look into:
-    - Naive Bayes: P(query term|document text)
+    - Naive Bayes: P(query|document text) or P(partition|document text)
     - Transformer: sequence to sequence
     - Splade
     - RM3 reversed
