@@ -6,6 +6,7 @@ The repository for team OWS at [LongEval 2024](https://clef-longeval.github.io/)
 
 - Feature-based Learning to Rank (Gijs)
   - Use the WOWS submissions to create around 50 features
+    - Extract features/add them via code like this: https://github.com/tira-io/teaching-ir-with-shared-tasks/blob/main/tutorials/tutorial-query-performance-prediction.ipynb respectively https://github.com/tira-io/teaching-ir-with-shared-tasks/blob/main/tutorials/tutorial-data-access-from-java.ipynb
     - Query Features: Query Intent + Query Performance Prediction
     - Document Features: Web Page Genre + Corpus Grap + Readibility 
     - Query-Document Features: BM25 + MonoT5 + ColBERT
