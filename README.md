@@ -13,7 +13,7 @@ The repository for team OWS at [LongEval 2024](https://clef-longeval.github.io/)
   - Apply LambdaMART
 
 
-## Idea 2: Archive Lookup / Exploit Overlap / Zipfs Law
+## Idea 2: Archive Lookup / Learning from History / History Repeats Itself / Exploit Overlap / Zipfs Law
 
 I already know which topics will be submitted. I already know "similar" documents
 
