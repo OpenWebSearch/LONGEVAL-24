@@ -1,45 +1,49 @@
-# IR Lab in Padua 2024: Building Search Engines for LongEval'24 at CLEF 2024
+# Team OpenWebSearch (OWS) at LongEval 2024
 
-This repository serves as starter for the IR lab in Padua 2024 for participation at [LongEval 2024](https://clef-longeval.github.io/) at [CLEF 2024](https://clef2024.imag.fr/) using [TIRA](https://www.tira.io/)/[TIREx](https://www.tira.io/tirex).
+The repository for team OWS at [LongEval 2024](https://clef-longeval.github.io/) at [CLEF 2024](https://clef2024.imag.fr/)
 
-We recommend that you work using [dev containers with Docker](https://code.visualstudio.com/docs/devcontainers/containers) to simplify reproducible submissions to TIRA.
+## Idea 1: Features from WOWS
 
-
-## Developing in Dev Containers
-
-A dev container (please find a suitable installation instruction [here](https://code.visualstudio.com/docs/devcontainers/containers)) allows you to directly work in the prepared Docker container so that you do not have to install the dependencies (which can sometimes be a bit tricky).
-
-To develop with dev containers, please:
-
-- Install [VS Code](https://code.visualstudio.com/download) and [Docker](https://docs.docker.com/engine/install/) on your machine
-- Clone this repository: `git clone ...`
-- Open this repository in VS Code, click on "Open in Container", shortly verify that you are in the container.
+- Feature-based Learning to Rank
+  - Use the WOWS submissions to create around 50 features
+    - Query Features: Query Intent + Query Performance Prediction
+    - Document Features: Web Page Genre + Corpus Grap + Readibility 
+    - Query-Document Features: BM25 + MonoT5 + ColBERT
+    - ToDo: Look for more interesting components
+  - Apply LambdaMART
 
 
-## Repository Structure
+## Idea 2: Archive Lookup / Exploit Overlap / Zipfs Law
 
-This repository contains a set of directories as inspiration on how to get started.
-As one of your first steps, you can look into each directory and delete the directories that you do not want to use (if you later change your mind, you can still get everything from the git history).
+I already know which topics will be submitted. I already know "similar" documents
 
-The directories are:
+Archive lookup: I look up what was good a few months ago, now we try to transfer this via two strategies and combinations thereof: (1) query reformulation, (2) document reformulation.
 
-- [ir-datasets](ir-datasets): Contains the code for parsing queries and documents. If you want to focus your work on new/different ways to parse the queries/documents (e.g., using the french text or a combination of english/french), this would be your starting point.
-- [java-retrieval](java-retrieval): Contains code for retrieval pipelines that use java with Maven.
-- [pyterrier-retrieval](pyterrier-retrieval): Contains code for retrieval pipelines that use python with [PyTerrier](https://github.com/terrier-org/pyterrier).
+- Query Reformulation:
+  - Idea:
+    - Queries overlap over the different time slots
+    - I.e. for some query, we know which documents were clicked a few months ago
+    - We insert the clicked documents into the current corpus and reformulate the query with RM3 until the known relevant documents from a few months ago are at the top positions
+      - Use Explain Like I am BM25 for better reformulating
+    - Remove the old doc ids from the ranking
+    - Combine it with the Corpus Graph idea
+      - What to do if a query is new
 
-
-## Resources and Links
-
-- Please register to TIRA at: [https://www.tira.io/task-overview/ir-lab-padua-2024](https://www.tira.io/task-overview/ir-lab-padua-2024)
-- A dashboard overviewing retrieval components available in [TIRA](https://www.tira.io/)/[TIREx](https://www.tira.io/tirex) with tutorials on how you could re-use them: [https://tira-io.github.io/teaching-ir-with-shared-tasks/](https://tira-io.github.io/teaching-ir-with-shared-tasks/)
-- An [ir_datasets Browser](https://tira-io.github.io/ir-dataset-browser) to inspect public datasets from [https://ir-datasets.com/](https://ir-datasets.com/) with systems submitted to [TIRA](https://www.tira.io/)/[TIREx](https://www.tira.io/tirex)
-- The template repository for this repo (in case if you have improvements for the next generation :)): [https://github.com/tira-io/ir-lab-padua-2024](https://github.com/tira-io/ir-lab-padua-2024)
-
-Everything is open for modification and we would be happy about ideas and pull requests!
-
-
-## Assistance and Help
-
-**Idea:** [Maik](https://www.tira.io/u/maik_froebe) could do an early review of your repository, e.g., after the first two weeks, to give feedback on the dockerization to prepare an early submission of your baseline upon which you subsequently can improve upon.
-
-If you have any questions or problems, please do not hesitate to contact [Maik](https://www.tira.io/u/maik_froebe) via mail or a [direct message in TIRA](https://www.tira.io/u/maik_froebe), or post your question on [the forum](https://www.tira.io/c/ir-lab/).
+- Document Reformulation/Oracle Indexing:
+  - Idea:
+    - Reformulate all documents so that they are only retrieved for the queries for which they are relevant and not be retrieved for queries for which they are not relevant
+    - Because queries are overlapping
+    - Learn optimal sequence to sequence translation of documents to ideal documents on the training data
+    - Use this on the test data that is X months in the future and uses the same topics (information needs) but (slightly) updated documents
+  - What do we need:
+    - Sequence to sequence training dataset: Document -> perfect document
+    - How do we construct this?
+      - document => all queries for which the document is relevant (DeepCT / splade training objective)
+      - Reverse bipartite graph between documents and its relevant queries
+      - Include corpus graph idea?
+      - Goal: ndcg above 0.8
+  - Technnologies to look into:
+    - Naive Bayes: P(query term|document text)
+    - Transformer: sequence to sequence
+    - Splade
+    - RM3 reversed
