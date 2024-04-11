@@ -2,6 +2,12 @@
 
 The repository for team OWS at [LongEval 2024](https://clef-longeval.github.io/) at [CLEF 2024](https://clef2024.imag.fr/)
 
+## Setup:
+
+```
+tira-cli download --dataset longeval-tiny-train-20240315-training
+```
+
 ## Idea 1: Features from WOWS
 
 - Feature-based Learning to Rank (Gijs)
