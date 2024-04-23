@@ -24,6 +24,12 @@ class LongEvalDocs(TrecDocs):
             index_fields=['doc_id'],
         )
 
+ir_datasets.registry.register('longeval/2023-01', Dataset(
+    LongEvalDocs('/root/.ir_datasets/longeval/test-collection/2023_01/English/Documents/Trec/'),
+    TsvQueries(LocalDownload(Path('/root/.ir_datasets/longeval/test-collection/2023_01/English/Queries/train.tsv'))),
+    TrecQrels(LocalDownload(Path('/root/.ir_datasets/longeval/test-collection/2023_01/French/Qrels/train.txt')), {0: 'Not Relevant', 1: 'Relevant', 2: 'Highly Relevant'})
+))
+
 ir_datasets.registry.register('longeval/2023-06', Dataset(
     LongEvalDocs('/root/.ir_datasets/longeval/test-collection/2023_06/English/Documents/Trec/'),
     TsvQueries(LocalDownload(Path('/root/.ir_datasets/longeval/test-collection/2023_06/English/Queries/test.tsv')))

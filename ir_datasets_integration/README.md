@@ -1,6 +1,8 @@
 docker run --rm -ti -v /mnt/ceph/tira/state/ir_datasets/longeval/test-collection:/root/.ir_datasets/longeval/test-collection --entrypoint sh mam10eks/longeval2024-ir-dataset:0.0.1
 
 
+/irds_cli.sh  --ir_datasets_id longeval/2023-01 --include_original False --output_dataset_path /tmp/2023-01 --output_dataset_truth_path /tmp/2023-01-truth
+
 /irds_cli.sh  --ir_datasets_id longeval/2023-06 --skip_qrels True --include_original False --output_dataset_path /tmp/2023-06
 
 /irds_cli.sh  --ir_datasets_id longeval/2023-08 --skip_qrels True --include_original False --output_dataset_path /tmp/2023-08
