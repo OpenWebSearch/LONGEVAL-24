@@ -1,0 +1,1 @@
+{"boosting_type": "gbdt", "learning_rate": 0.30611910385605584, "num_leaves": 3, "n_estimators": 395, "feature_fraction": 0.18997710683028857, "subsample": 0.27877340579034704, "task": "train", "metric": "ndcg", "importance_type": "gain", "eval_at": "10", "early_stopping_rounds": 30, "verbosity": -1}
