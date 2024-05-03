@@ -1,12 +1,12 @@
-#docker build -t time-corpus-graph -f keyqueries/Dockerfile .
+#docker build -t time-keyquery -f keyqueries/Dockerfile .
 # A prepared image with python3.10, java 11, ir_datasets, tira, and PyTerrier installed 
 FROM webis/ir-lab-wise-2023:0.0.4
 
 # Update the tira command to use the latest version
 RUN pip3 uninstall -y tira \
-	&& pip3 install tira\>=0.0.125
+	&& pip3 install git+https://github.com/tira-io/tira.git@development#\&subdirectory=python-client
 
-ADD keyqueries.py oracle-indexing/oracle-index.jsonl.gz /
+ADD keyqueries/keyqueries.py oracle-indexing/oracle-index.jsonl.gz /
 
 ENTRYPOINT [ "/keyqueries.py", "--input-dataset",  "$inputDataset", "--output-dir", "$outputDir" ]
 

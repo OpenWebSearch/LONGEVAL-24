@@ -109,21 +109,21 @@ def run_foo(index, reformulation_index, weighting_models, fb_terms, fb_docs, out
     for wmodel in weighting_models:
         for fb_term in fb_terms:
             for fb_doc in fb_docs:
-                print(f'Run {wmodel} {fb_term} {fb_doc}')
-
-                out = index >> pt.Feedback(wmodel, fb_terms=fb_term, fb_docs=fb_doc, index=reformulation_index)
-                out.to_json(out_dir / f'{wmodel}_{fb_term}_{fb_doc}.jsonl.gz', index=False, lines=True, orient='records')
+                print(f'Run RM3 on {wmodel} {fb_term} {fb_doc}')
 
                 rm3_keyquery_bm25 = oracle_retrieval_results >> pt.rewrite.RM3(reformulation_index, fb_docs=fb_doc, fb_terms=fb_term) >> pt.BatchRetrieve(index, wmodel=wmodel)
 
                 rm3_keyquery_bm25(topics).to_json(f'{out_dir}/rm3_{wmodel}_{fb_term}_{fb_doc}.jsonl.gz', index=False, lines=True, orient='records')
 
+                print(f'Run BO1 on {wmodel} {fb_term} {fb_doc}')
 
                 bo1_keyquery_bm25 = oracle_retrieval_results >> pt.rewrite.Bo1QueryExpansion(reformulation_index, fb_docs=fb_doc, fb_terms=fb_term) >> pt.BatchRetrieve(index, wmodel="BM25")
 
                 bo1_keyquery_bm25(topics).to_json(f'{out_dir}/bo1_{wmodel}_{fb_term}_{fb_doc}.jsonl.gz', index=False, lines=True, orient='records')
-    
-                kl_keyquery_bm25 = oracle_retrieval_results >> pt.rewrite.KLQueryExpansion(m, fb_docs=fb_doc, fb_terms=fb_term) >> pt.BatchRetrieve(index, wmodel="BM25")
+
+                print(f'Run KL on {wmodel} {fb_term} {fb_doc}')
+
+                kl_keyquery_bm25 = oracle_retrieval_results >> pt.rewrite.KLQueryExpansion(reformulation_index, fb_docs=fb_doc, fb_terms=fb_term) >> pt.BatchRetrieve(index, wmodel="BM25")
 
                 kl_keyquery_bm25(topics).to_json(f'{out_dir}/kl_{wmodel}_{fb_term}_{fb_doc}.jsonl.gz', index=False, lines=True, orient='records')
 
@@ -144,7 +144,4 @@ if __name__ == '__main__':
     index = tira.pt.index('ir-benchmarks/tira-ir-starter/Index (tira-ir-starter-pyterrier)', args.input_dataset)
     reformulation_index = build_reformulation_index(oracle_index, bm25_raw, topics, pt_dataset)
 
-    index = tira.pt.index('ir-benchmarks/tira-ir-starter/Index (tira-ir-starter-pyterrier)', args.input_dataset)
-    bm25 = pt.BatchRetrieve(index, wmodel='BM25', num_results=args.top_k)
-    
-    run_foo(index, reformulation_index, args.weighting_models, args.fb_terms, args.fb_docs, args.output_dir, oracle_retrieval_results)
+    run_foo(index, reformulation_index, args.w_models, args.fb_terms, args.fb_docs, args.output_dir, oracle_retrieval_results, topics)
