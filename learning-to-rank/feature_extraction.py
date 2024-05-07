@@ -1,4 +1,10 @@
+from collections import defaultdict
+
 import numpy as np
+import pandas as pd
+from tira.pyterrier_util import TiraApplyFeatureTransformer
+
+from reverted_index import construct_reverted_index_of_the_past
 
 
 def one_hot_encode(labels: list[str]):
@@ -30,7 +36,7 @@ def get_document_features(tira, dataset):
 
 def get_query_document_features(tira, dataset):
     return (
-        # tira.pt.from_submission('ir-benchmarks/fschlatt/rank-zephyr', dataset) **
+        tira.pt.from_submission('workshop-on-open-web-search/fschlatt/rank-zephyr', dataset) **
         tira.pt.from_submission('ir-benchmarks/fschlatt/sparse-cross-encoder-4-512', dataset) **
         tira.pt.from_submission('ir-benchmarks/fschlatt/castorini-list-in-t5-150', dataset) **
         tira.pt.from_submission('ir-benchmarks/tira-ir-starter/SBERT multi-qa-mpnet-base-cos-v1 (tira-ir-starter-beir)', dataset) **
@@ -45,6 +51,33 @@ def get_query_document_features(tira, dataset):
     )
 
 
+def keyquery_score_dict(tira, dataset_id, offset, expansion_method, retrieval_model, fb_terms, fb_docs):
+    f = tira.get_run_output(f'ir-benchmarks/ows/time-keyquery-offset-{offset}', dataset_id)
+    f = pd.read_json(f'{f}/{expansion_method}_{retrieval_model}_{fb_terms}_{fb_docs}.jsonl.gz', lines=True)
+    default_value = np.array([0, 0])
+    ret = defaultdict(lambda: defaultdict(lambda: default_value))
+
+    for _, row in f.iterrows():
+        ret[row['qid']][row['docno']] = np.array([1, row['score']])
+
+    return ret
+
+
+def get_keyquery_features(tira, dataset):
+    dataset_id = dataset.irds_ref().dataset_id()
+    return TiraApplyFeatureTransformer(keyquery_score_dict(tira, dataset_id, '2022', 'bo1', 'BM25', 30, 5), name='keyquery_features')
+
+
+def get_reverted_index_features(tira, dataset):
+    reverted_index_of_the_past = construct_reverted_index_of_the_past(tira, dataset)
+    return TiraApplyFeatureTransformer(reverted_index_of_the_past, name='reverted_index_features')
+
 
 def get_all_features(tira, dataset):
-    return get_query_features(tira, dataset) ** get_document_features(tira, dataset) ** get_query_document_features(tira, dataset)
+    return (
+        get_query_features(tira, dataset) **
+        get_document_features(tira, dataset) **
+        get_query_document_features(tira, dataset) **
+        get_keyquery_features(tira, dataset) **
+        get_reverted_index_features(tira, dataset)
+    )

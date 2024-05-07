@@ -1,4 +1,6 @@
 from collections import defaultdict
+
+import numpy as np
 from tira.ir_datasets_util import translate_irds_id_to_tirex
 from statistics import mean
 
@@ -25,13 +27,11 @@ def construct_reverted_index_of_the_past(tira, inference_dataset, oracle_dataset
             
                 qid_to_doc_to_score[qid][docno] += [hit['score']]
     
-    default_value = [0, 0, 0]
+    default_value = np.array([0, 0, 0])
     ret = defaultdict(lambda: defaultdict(lambda: default_value))
     for qid in qid_to_doc_to_score:
-        ret[qid] = defaultdict(lambda: default_value)
-
         for docno in qid_to_doc_to_score[qid]:
-            ret[qid][docno] = [1, max(qid_to_doc_to_score[qid][docno]), mean(qid_to_doc_to_score[qid][docno])]
+            ret[qid][docno] = np.array([1, max(qid_to_doc_to_score[qid][docno]), mean(qid_to_doc_to_score[qid][docno])])
     
     return ret
 
