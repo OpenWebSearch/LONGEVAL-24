@@ -1,0 +1,1 @@
+{"boosting_type": "dart", "learning_rate": 0.07121504269954892, "num_leaves": 252, "n_estimators": 123, "feature_fraction": 0.23339822972438587, "subsample": 0.21707288434775063, "task": "train", "metric": "ndcg", "importance_type": "gain", "eval_at": "10", "early_stopping_rounds": 30, "verbosity": -1}
