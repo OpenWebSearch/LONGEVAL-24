@@ -1,34 +1,31 @@
-System Name: ows_ltr_wows_all 
-Description (short description of the system): A LambdaMART model with query-only features, document-only features, both cheap (lexical) and expensive (neural) query-document features, keyquery features, and reverted index features (139 in total).
+System Name: ows_bm25_bo1_keyqueries 
+Description (short description of the system): A keyquerey approach that reformulates the original query so that documents known to be relevant from the bast are ranked among the top-positions.
 ************
-We wanted to use historical data to reformulate future queries and documents, using a keyquery approach and a reverted index. The main idea is that,
-if we saw a query in the past, we use the past relevance data to get better results for future data. This can only be applied to overlapping queries,
-hence we combined this historical perspective with a large set of other features from the Workshop on Open Web Search (WOWS 2024, https://opensearchfoundation.org/wows2024/),
-as well as previously existing retrieval models in TIREx (https://tira.io/tirex). The features were used to train a LambdaMART model on the official LongEval 2024 training data (sampled from January 2023).
-The keyquery approach and reverted index were built using all data from LongEval 2023 (i.e. the training, heldout within-time, short term and long term splits, sampled in 2022).
+We wanted to use historical data to reformulate future queries, using a keyquery approach.
+The main idea is that, if we saw a query in the past, we use the past relevance data to get better results for future data.
+This can only be applied to overlapping queries.
+For non-overlapping queries, we use the results of the ows_ltr_all run without modification.
+We use all available data, i.e., the official LongEval 2024 training data (sampled from January 2023) but also all data from LongEval 2023 (i.e. the training, heldout within-time, short term and long term splits, sampled in 2022).
 
-All features are derived from the English versions of the queries and documents. The training set was split into a training and validation split,
-on which we tuned the LambdaMART hyperparameters. The retrieval models combined by LambdaMART include lexical models like BM25 and neural models like MonoT5.
-
-Ranking Methods (Which ranking approaches does the system use?): Feature-based re-ranking with LambdaMART, including 5 lexical ranking models and 7 neural ranking models. BM25 is used as first-stage retriever, and the top 100 documents are re-ranked.
+Ranking Methods (Which ranking approaches does the system use?): BM25.
 Data Used (Which data were used to train and fine-tune the system? Please be as concrete as possible and use the exact reference whenever possible): the official LongEval 2024 training data (sampled from January 2023), as well as all the data from LongEval 2023 (sampled in 2022)
-Software Used (Which software and tools did you use for training, tunning and running your system? Please be as concrete as possible, provide a reference to your code if possible, and provide the exact software version, whenever applicable): PyTerrier 0.10.0, LightGBM 4.3.0, Tira 0.0.129. Code (in dev-containers) available at https://github.com/OpenWebSearch/LONGEVAL-24. 
+Software Used (Which software and tools did you use for training, tunning and running your system? Please be as concrete as possible, provide a reference to your code if possible, and provide the exact software version, whenever applicable): PyTerrier 0.10.0, Tira 0.0.129. Code (in dev-containers) available at https://github.com/OpenWebSearch/LONGEVAL-24. 
 Pre-processing and Indexing (What pre-processing and indexing does the system use? Please be as concrete as possible and provide the details and the setup of the tools): PyTerrier indexing with default settings (i.e. Porter stemming and stopwords removed).
-System Combination / Fusion (Does the system combine different retrieval models? If so, how are they combined?): Yes, we use the scores of the different retrieval models as input features to a LambdaMART learning-to-rank model. 
-Multi-stage Retrieval (Is system single-stage or does it use reranking? If multi-stage, which rerankers are used?): It is multi-stage. We re-rank the top 100 documents from a BM25 first-stage ranker using LambdaMART.
+System Combination / Fusion (Does the system combine different retrieval models? If so, how are they combined?): No. We only use results of the run ows_ltr_all in case we have no past overlapping query
+Multi-stage Retrieval (Is system single-stage or does it use reranking? If multi-stage, which rerankers are used?): Yes, for query reformulation.
 Translations (Does the system use French documents or the translations? If translations, which ones?): We use the official English translations.
 
-Resources (How much GPU, CPU, memory, ... did you use for pre-processing and inference steps? Did you use any commercial cloud services?): We use TIRA for pre-processing and feature extraction, which caches all run outputs to make inference more efficient. The most expensive feature was RankZephyr: it used an A100 GPU, and query processing took 30+ seconds per query.
-The Costs (How long did pre-processing and inference take?): Pre-processing the full corpus took ~2 days in total. LambdaMART hyperparameter tuning took ~30 minutes, and inference is less than a minute for all queries.
+Resources (How much GPU, CPU, memory, ... did you use for pre-processing and inference steps? Did you use any commercial cloud services?): We use TIRA for pre-processing and feature extraction, which caches all run outputs to make inference more efficient. This run works on 1 CPU with 10GB of RAM.
+The Costs (How long did pre-processing and inference take?): Index creation takes around 4 hours with PyTerrier (single CPU with 10 GB of RAM), we load the pre-build index from TIRA, then this approach runs in about 5 minutes (without any optimization).
 
 ************
 Yes/No Questions
 
 Did you use any statistical ranking model? (yes/no): yes
-Did you use any deep neural network model? (yes/no): yes
-Did you use a sparse neural model? (yes/no): yes
-Did you use a dense neural model? (yes/no): yes
-Did you use more than a single retrieval model? (yes/no): yes
+Did you use any deep neural network model? (yes/no): no
+Did you use a sparse neural model? (yes/no): no
+Did you use a dense neural model? (yes/no): no
+Did you use more than a single retrieval model? (yes/no): no
 Did you use French or English documents (French/English/both): English
 Did you use provided English translations (yes/no): yes
 Did you use any manual intervention on the translations? (yes/no): no
