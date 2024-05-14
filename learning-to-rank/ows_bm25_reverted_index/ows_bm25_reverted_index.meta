@@ -1,0 +1,32 @@
+System Name: ows_bm25_reverted_index 
+Description (short description of the system): A reverted index approach that reformulates documents so that near-duplocate documents known to be relevant from the past are ranked among the top-positions.
+************
+We wanted to use historical data to reformulate future documents, using a reverted index approach.
+The main idea is that, if we saw a query with relevant document in the past, we use the past relevance data to get better results for future data.
+This can only be applied to overlapping queries.
+For non-overlapping queries, we use the results of the ows_ltr_all run without modification.
+We use all available data, i.e., the official LongEval 2024 training data (sampled from January 2023) but also all data from LongEval 2023 (i.e. the training, heldout within-time, short term and long term splits, sampled in 2022).
+
+Ranking Methods (Which ranking approaches does the system use?): BM25.
+Data Used (Which data were used to train and fine-tune the system? Please be as concrete as possible and use the exact reference whenever possible): the official LongEval 2024 training data (sampled from January 2023), as well as all the data from LongEval 2023 (sampled in 2022)
+Software Used (Which software and tools did you use for training, tunning and running your system? Please be as concrete as possible, provide a reference to your code if possible, and provide the exact software version, whenever applicable): PyTerrier 0.10.0, Tira 0.0.129. Code (in dev-containers) available at https://github.com/OpenWebSearch/LONGEVAL-24. 
+Pre-processing and Indexing (What pre-processing and indexing does the system use? Please be as concrete as possible and provide the details and the setup of the tools): PyTerrier indexing with default settings (i.e. Porter stemming and stopwords removed).
+System Combination / Fusion (Does the system combine different retrieval models? If so, how are they combined?): No. We only use results of the run ows_ltr_all in case we have no past overlapping query
+Multi-stage Retrieval (Is system single-stage or does it use reranking? If multi-stage, which rerankers are used?): Yes, for query reformulation.
+Translations (Does the system use French documents or the translations? If translations, which ones?): We use the official English translations.
+
+Resources (How much GPU, CPU, memory, ... did you use for pre-processing and inference steps? Did you use any commercial cloud services?): We use TIRA for pre-processing and feature extraction, which caches all run outputs to make inference more efficient. This run works on 1 CPU with 10GB of RAM.
+The Costs (How long did pre-processing and inference take?): Index creation takes around 4 hours with PyTerrier (single CPU with 10 GB of RAM), we load the pre-build index from TIRA, then this approach runs in about 5 minutes (without any optimization).
+
+************
+Yes/No Questions
+
+Did you use any statistical ranking model? (yes/no): yes
+Did you use any deep neural network model? (yes/no): no
+Did you use a sparse neural model? (yes/no): no
+Did you use a dense neural model? (yes/no): no
+Did you use more than a single retrieval model? (yes/no): no
+Did you use French or English documents (French/English/both): English
+Did you use provided English translations (yes/no): yes
+Did you use any manual intervention on the translations? (yes/no): no
+Did you use any manual intervention on the results? (yes/no): no
