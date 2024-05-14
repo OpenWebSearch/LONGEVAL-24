@@ -69,10 +69,15 @@
   <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> 
    <dc:format>application/pdf</dc:format> 
    <dc:type><rdf:Bag><rdf:li>journal</rdf:li></rdf:Bag></dc:type>
-   <dc:title><rdf:Alt><rdf:li xml:lang="x-default">Team OpenWebSearch at QuantumCLEF: Feature Selection for Bootstrapped Feature Importance.</rdf:li></rdf:Alt></dc:title>
-   <dc:creator><rdf:Seq><rdf:li>Dmitry S. Kulyabov</rdf:li>
-     <rdf:li>Ilaria Tiddi</rdf:li>
-     <rdf:li>Manfred Jeusfeld</rdf:li></rdf:Seq></dc:creator>
+   <dc:title><rdf:Alt><rdf:li xml:lang="x-default">Team OpenWebSearch at CLEF 2024: LongEval and QuantumCLEF</rdf:li></rdf:Alt></dc:title>
+   <dc:creator><rdf:Seq><rdf:li>Daria Alexander</rdf:li>
+     <rdf:li>Maik Fr{ö}be</rdf:li>
+     <rdf:li>Gijs Hendriksen</rdf:li>
+     <rdf:li>Ferdinand Schlatt</rdf:li>
+     <rdf:li>Matthias Hagen</rdf:li>
+     <rdf:li>Djoerd Hiemstra</rdf:li>
+     <rdf:li>Martin Potthast</rdf:li>
+     <rdf:li>Arjen P. de Vries</rdf:li></rdf:Seq></dc:creator>
    <dc:rights><rdf:Alt><rdf:li xml:lang="x-default">© 2024 Copyright for this paper by its authors. Use permitted under Creative Commons License Attribution 4.0 International (CC BY 4.0).</rdf:li></rdf:Alt></dc:rights>
    <dc:description><rdf:Alt><rdf:li xml:lang="x-default">Layout_by_CEURART</rdf:li></rdf:Alt></dc:description>
    <dc:subject><rdf:Bag><rdf:li>LaTeX class </rdf:li>
@@ -92,9 +97,9 @@
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> 
    <xmp:CreatorTool>LaTeX with hyperref</xmp:CreatorTool> 
-   <xmp:ModifyDate>2024-05-08T09:12:13+02:00</xmp:ModifyDate> 
-   <xmp:CreateDate>2024-05-08T09:12:13+02:00</xmp:CreateDate> 
-   <xmp:MetadataDate>2024-05-08T09:12:13+02:00</xmp:MetadataDate> 
+   <xmp:ModifyDate>2024-05-14T09:37:17+02:00</xmp:ModifyDate> 
+   <xmp:CreateDate>2024-05-14T09:37:17+02:00</xmp:CreateDate> 
+   <xmp:MetadataDate>2024-05-14T09:37:17+02:00</xmp:MetadataDate> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpRights = "http://ns.adobe.com/xap/1.0/rights/"> 
    <xmpRights:Marked>True</xmpRights:Marked>
@@ -102,8 +107,8 @@
    <xmpRights:WebStatement>https://creativecommons.org/licenses/by/4.0</xmpRights:WebStatement>
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"> 
-   <xmpMM:DocumentID>uuid:02A67CA8-708E-8A65-B57C-9E8AF069D195</xmpMM:DocumentID> 
-   <xmpMM:InstanceID>uuid:B888A6E8-6E41-05FC-D6A9-5C9291C1ED91</xmpMM:InstanceID> 
+   <xmpMM:DocumentID>uuid:AC69B737-D842-83BD-0A18-EA0B432C9F84</xmpMM:DocumentID> 
+   <xmpMM:InstanceID>uuid:87D14688-7FA8-2D91-35D4-DFB6C1DE9BEC</xmpMM:InstanceID> 
   </rdf:Description> 
  </rdf:RDF> 
 </x:xmpmeta> 

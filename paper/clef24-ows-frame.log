@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.4.29)  8 MAY 2024 09:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.4.29)  14 MAY 2024 09:37
 entering extended mode
- \write18 enabled.
+ restricted \write18 enabled.
  %&-line parsing enabled.
-**clef24-quantum-feature-selection-frame.tex
-(./clef24-quantum-feature-selection-frame.tex
+**clef24-ows-frame.tex
+(./clef24-ows-frame.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (./ceurart.cls
@@ -609,9 +609,8 @@ File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 (/usr/share/texmf-dist/tex/latex/pdfx/8bit.def
 File: 8bit.def 2008/03/30 v1.1d Input encoding file
 )
-** pdfx: Metadata file clef24-quantum-feature-selection-frame.xmpdata read succ
-essfully.
-(./clef24-quantum-feature-selection-frame.xmpdata)<<sRGB.icc>>
+** pdfx: Metadata file clef24-ows-frame.xmpdata read successfully.
+(./clef24-ows-frame.xmpdata)<<sRGB.icc>>
 (/usr/share/texmf-dist/tex/latex/pdfx/8bit.def
 File: 8bit.def 2008/03/30 v1.1d Input encoding file
 )
@@ -661,7 +660,7 @@ tawesome5
 
 (/usr/share/texmf-dist/tex/latex/fontawesome5/fontawesome5-mapping.def)))
 \g_xmpdata_output_iow=\write4
-\openout4 = `clef24-quantum-feature-selection-frame.xmpdata'.
+\openout4 = `clef24-ows-frame.xmpdata'.
 
 \l_ceur_title_before_dim=\dimen177
 \l_ceur_title_after_dim=\dimen178
@@ -866,13 +865,9 @@ bertinusSerif-TLF.
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
 (Font)              scaled to size 10.95pt on input line 24.
 
-(./clef24-quantum-feature-selection-frame.aux
-(./clef24-quantum-feature-selection-pre.aux)
-(./clef24-quantum-feature-selection-part1.aux)
-(./clef24-quantum-feature-selection-part2.aux)
-(./clef24-quantum-feature-selection-part3.aux)
-(./clef24-quantum-feature-selection-sum.aux))
-\openout1 = `clef24-quantum-feature-selection-frame.aux'.
+(./clef24-ows-frame.aux (./clef24-ows-pre.aux) (./clef24-ows-part1.aux)
+(./clef24-ows-part2.aux) (./clef24-ows-part3.aux) (./clef24-ows-sum.aux))
+\openout1 = `clef24-ows-frame.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
 LaTeX Font Info:    ... okay on input line 24.
@@ -946,10 +941,9 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 Package hyperref Info: Link coloring ON on input line 24.
 
-(./clef24-quantum-feature-selection-frame.out)
-(./clef24-quantum-feature-selection-frame.out)
+(./clef24-ows-frame.out) (./clef24-ows-frame.out)
 \@outlinefile=\write5
-\openout5 = `clef24-quantum-feature-selection-frame.out'.
+\openout5 = `clef24-ows-frame.out'.
 
 Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           Using `bookmark' together with `hyperref' is recommended,
@@ -974,43 +968,43 @@ File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO
 Package tocbasic Info: omitting babel extension for `lol'
 (tocbasic)             because of missing \bbl@set@language on input line 24.
 \scr@dte@lstlisting@maxnumwidth=\skip89
-\openout2 = `clef24-quantum-feature-selection-pre.aux'.
+\openout2 = `clef24-ows-pre.aux'.
 
 
-(./clef24-quantum-feature-selection-pre.tex
+(./clef24-ows-pre.tex
 \verbatim@out=\write6
-\openout6 = `clef24-quantum-feature-selection-frame.abs'.
+\openout6 = `clef24-ows-frame.abs'.
 
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/b/n' will be
-(Font)              scaled to size 10.95pt on input line 64.
+(Font)              scaled to size 10.95pt on input line 48.
 LaTeX Font Info:    Trying to load font information for T1+LibertinusSans-TLF o
-n input line 64.
+n input line 48.
 
 (/usr/share/texmf-dist/tex/latex/libertinus-type1/T1LibertinusSans-TLF.fd
 File: T1LibertinusSans-TLF.fd 2022/11/07 (autoinst) Font definitions for T1/Lib
 ertinusSans-TLF.
 )
 LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/b/n' will be
-(Font)              scaled to size 10.95pt on input line 64.
+(Font)              scaled to size 10.95pt on input line 48.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `LibertinusSans-TLF' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 64.
+(Font)              scaled to size 9.0pt on input line 48.
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
-(Font)              scaled to size 17.28pt on input line 69.
+(Font)              scaled to size 17.28pt on input line 53.
 LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/m/n' will be
-(Font)              scaled to size 17.28pt on input line 69.
+(Font)              scaled to size 17.28pt on input line 53.
 LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/b/n' will be
-(Font)              scaled to size 17.28pt on input line 69.
+(Font)              scaled to size 17.28pt on input line 53.
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 69.
+(Font)              scaled to size 12.0pt on input line 53.
 <<ot1.cmap>> (/usr/share/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )<<oml.cmap>><<oms.cmap>><<omx.cmap>>
-LaTeX Font Info:    Trying to load font information for U+msa on input line 69.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 53.
 
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1018,7 +1012,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/share/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 69.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 53.
 
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1028,74 +1022,47 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 69.
+(Font)              scaled to size 8.0pt on input line 53.
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/it' will be
-(Font)              scaled to size 8.0pt on input line 69.
+(Font)              scaled to size 8.0pt on input line 53.
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 69.
+(Font)              scaled to size 14.4pt on input line 53.
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/it' will be
-(Font)              scaled to size 9.0pt on input line 69.
+(Font)              scaled to size 9.0pt on input line 53.
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/it' will be
-(Font)              scaled to size 6.0pt on input line 69.
-
-(./clef24-quantum-feature-selection-frame.abs)
-Overfull \hbox (376.42744pt too wide) detected at line 69
+(Font)              scaled to size 6.0pt on input line 53.
+ (./clef24-ows-frame.abs)
+Overfull \hbox (376.42744pt too wide) detected at line 53
 []
  []
 
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 69.
+(Font)              scaled to size 6.0pt on input line 53.
 
-Package hyperref Warning: Ignoring empty anchor on input line 69.
-
-
-Package hyperref Warning: Ignoring empty anchor on input line 69.
+Package hyperref Warning: Ignoring empty anchor on input line 53.
 
 
-Package hyperref Warning: Ignoring empty anchor on input line 69.
+Package hyperref Warning: Ignoring empty anchor on input line 53.
 
-
-Package hyperref Warning: Ignoring empty anchor on input line 69.
-
-LaTeX Font Info:    Trying to load font information for U+fontawesomefree1 on i
-nput line 69.
-(/usr/share/texmf-dist/tex/latex/fontawesome5/ufontawesomefree1.fd)
-
-Package hyperref Warning: Ignoring empty anchor on input line 69.
-
-
-Package hyperref Warning: Ignoring empty anchor on input line 69.
-
-LaTeX Font Info:    Trying to load font information for U+fontawesomebrands1 on
- input line 69.
-(/usr/share/texmf-dist/tex/latex/fontawesome5/ufontawesomebrands1.fd)
-LaTeX Font Info:    Font shape `U/fontawesomebrands1/solid/n' in size <9> not a
-vailable
-(Font)              Font shape `U/fontawesomebrands1/regular/n' tried instead o
-n input line 69.
-
-
-Package hyperref Warning: Ignoring empty anchor on input line 69.
-
-<cc-by.pdf, id=20, 88.33pt x 31.11626pt>
+<cc-by.pdf, id=11, 88.33pt x 31.11626pt>
 File: cc-by.pdf Graphic file (type pdf)
 <use cc-by.pdf>
-Package pdftex.def Info: cc-by.pdf  used on input line 69.
+Package pdftex.def Info: cc-by.pdf  used on input line 53.
 (pdftex.def)             Requested size: 31.22595pt x 11.0pt.
 LaTeX Font Info:    Trying to load font information for TS1+LibertinusSerif-TLF
- on input line 69.
+ on input line 53.
 (/usr/share/texmf-dist/tex/latex/libertinus-type1/TS1LibertinusSerif-TLF.fd
 File: TS1LibertinusSerif-TLF.fd 2022/11/07 (autoinst) Font definitions for TS1/
 LibertinusSerif-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/LibertinusSerif-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 69.
+(Font)              scaled to size 6.0pt on input line 53.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `LibertinusSerif-TLF' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (4.5pt too wide) in paragraph at lines 69--69
+Overfull \hbox (4.5pt too wide) in paragraph at lines 53--53
 [][][][]||$[]$ $[]$|  
  []
 
@@ -1112,13 +1079,11 @@ LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
 {/usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_mfadfl.enc}{/usr/s
 hare/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_75t36g.enc}{/usr/share/te
 xmf-dist/fonts/enc/dvips/libertinus-type1/lbts_nufysp.enc}{/usr/share/texmf-dis
-t/fonts/enc/dvips/fontawesome5/fa5free1.enc}{/usr/share/texmf-dist/fonts/enc/dv
-ips/fontawesome5/fa5brands1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/libertin
-us-type1/lbts_rlktsf.enc} <./cc-by.pdf>]
-\openout2 = `clef24-quantum-feature-selection-part1.aux'.
+t/fonts/enc/dvips/libertinus-type1/lbts_rlktsf.enc} <./cc-by.pdf>]
+\openout2 = `clef24-ows-part1.aux'.
 
 
-(./clef24-quantum-feature-selection-part1.tex
+(./clef24-ows-part1.tex
 LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/b/n' will be
 (Font)              scaled to size 14.4pt on input line 1.
 ) [2
@@ -1126,18 +1091,17 @@ LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/b/n' will be
 
 
 ]
-\openout2 = `clef24-quantum-feature-selection-part2.aux'.
+\openout2 = `clef24-ows-part2.aux'.
 
-
-(./clef24-quantum-feature-selection-part2.tex) [3
+ (./clef24-ows-part2.tex) [3
 
 
 
 ]
-\openout2 = `clef24-quantum-feature-selection-part3.aux'.
+\openout2 = `clef24-ows-part3.aux'.
 
 
-(./clef24-quantum-feature-selection-part3.tex
+(./clef24-ows-part3.tex
 
 Package natbib Warning: Citation `pasin:2024' on page 4 undefined on input line
  3.
@@ -1147,15 +1111,14 @@ Package natbib Warning: Citation `pasin:2024' on page 4 undefined on input line
 
 
 {/usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_sfissr.enc}]
-\openout2 = `clef24-quantum-feature-selection-sum.aux'.
+\openout2 = `clef24-ows-sum.aux'.
 
 
-(./clef24-quantum-feature-selection-sum.tex) [5
+(./clef24-ows-sum.tex) [5
 
 
 
-]
-(./clef24-quantum-feature-selection-frame.bbl
+] (./clef24-ows-frame.bbl
 LaTeX Font Info:    Trying to load font information for T1+LibertinusMono-TLF o
 n input line 24.
 
@@ -1186,46 +1149,36 @@ Package natbib Warning: There were undefined citations.
 
 
 {/usr/share/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_tll2u3.enc}]
-(./clef24-quantum-feature-selection-frame.aux
-(./clef24-quantum-feature-selection-pre.aux)
-(./clef24-quantum-feature-selection-part1.aux)
-(./clef24-quantum-feature-selection-part2.aux)
-(./clef24-quantum-feature-selection-part3.aux)
-(./clef24-quantum-feature-selection-sum.aux))
+(./clef24-ows-frame.aux (./clef24-ows-pre.aux) (./clef24-ows-part1.aux)
+(./clef24-ows-part2.aux) (./clef24-ows-part3.aux) (./clef24-ows-sum.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-Package rerunfilecheck Info: File `clef24-quantum-feature-selection-frame.out' 
-has not changed.
+Package rerunfilecheck Info: File `clef24-ows-frame.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 28790 strings out of 476023
- 534078 string characters out of 5791582
- 1945187 words of memory out of 5000000
- 50214 multiletter control sequences out of 15000+600000
- 674124 words of font info for 197 fonts, out of 8000000 for 9000
+ 28732 strings out of 476023
+ 529038 string characters out of 5791582
+ 1940187 words of memory out of 5000000
+ 50164 multiletter control sequences out of 15000+600000
+ 673551 words of font info for 196 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 122i,20n,121p,10954b,2608s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Brands-Reg
-ular.pfb></usr/share/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Fre
-e-Regular.pfb></usr/share/texmf-dist/fonts/type1/public/fontawesome5/FontAwesom
-e5Free-Solid.pfb></usr/share/texmf-dist/fonts/type1/public/libertinus-type1/Lib
-ertinusMono-Regular.pfb></usr/share/texmf-dist/fonts/type1/public/libertinus-ty
-pe1/LibertinusSans-Bold.pfb></usr/share/texmf-dist/fonts/type1/public/libertinu
-s-type1/LibertinusSerif-Bold.pfb></usr/share/texmf-dist/fonts/type1/public/libe
-rtinus-type1/LibertinusSerif-Italic.pfb></usr/share/texmf-dist/fonts/type1/publ
-ic/libertinus-type1/LibertinusSerif-Regular.pfb></usr/share/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/shar
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on clef24-quantum-feature-selection-frame.pdf (6 pages, 555376 b
-ytes).
+ 122i,20n,121p,10932b,2608s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusMono-Reg
+ular.pfb></usr/share/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusS
+ans-Bold.pfb></usr/share/texmf-dist/fonts/type1/public/libertinus-type1/Liberti
+nusSerif-Bold.pfb></usr/share/texmf-dist/fonts/type1/public/libertinus-type1/Li
+bertinusSerif-Italic.pfb></usr/share/texmf-dist/fonts/type1/public/libertinus-t
+ype1/LibertinusSerif-Regular.pfb></usr/share/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10
+.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/shar
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on clef24-ows-frame.pdf (6 pages, 506254 bytes).
 PDF statistics:
- 171 PDF objects out of 1000 (max. 8388607)
+ 142 PDF objects out of 1000 (max. 8388607)
  15 named destinations out of 1000 (max. 500000)
  74324 words of extra memory for PDF output out of 89155 (max. 10000000)
 
